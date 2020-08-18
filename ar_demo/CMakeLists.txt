@@ -12,11 +12,15 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   image_transport
   sensor_msgs
-  cv_bridge
+  cv_bridge  # 2020.08.18 uncomment  https://stackoverflow.com/questions/43577496/build-error-undefined-reference-to-cv-bridgecvimagetoimagemsg-const/43577676
   message_filters
   camera_model
 )
+
+set(cv_bridge_DIR /opt/ros/melodic/share/cv_bridge/cmake)
+find_package(cv_bridge REQUIRED)
 find_package(OpenCV REQUIRED)
+# find_package(OpenCV 3.4.1 REQUIRED)
 
 catkin_package(
 
